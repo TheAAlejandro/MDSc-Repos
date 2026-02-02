@@ -26,11 +26,13 @@ bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-*.jar \
   -output /user/<your-username>/lab2/frequency_output \
   -mapper /home/<your-username>/hadoop-3.4.2/lab2/mapper.py \
   -reducer /home/<your-username>/hadoop-3.4.2/lab2 /reducer.py
+```
 
 We can view the result of the word frequencies by running the command
 
 ```bash
 bin/hdfs dfs -cat /user/<your-username>/lab2/frequency_output/part-00000 
+```
 
 ## Differences from word count 
 The word frequency pipeline is different with the word count pipeline. The former computes for the relative frequency of a certain word with respect to the entire document (or the entire corpus of words) while the word count only provides the absolute count or instances at which the word appears in the document. 
@@ -43,6 +45,7 @@ The output format for the frequency pipeline is the following:
 
 ```bash
 word\tfrequency
+```
 
 where \t is a tab space between the word and its frequency in 2 decimal places. 
 
@@ -57,6 +60,7 @@ $1\t0.00
 $5,000\t0.00
 &c\t0.00
 ***\t0.01
+```
 
 ## HDFS Paths Used
 The hdfs paths used in the pipeline are as follows:
@@ -70,6 +74,7 @@ We can, in fact, sort the results of the word frequency pipeline just by running
 
 ```bash
 bin/hdfs dfs -cat /user/<your-username>/lab2/frequency_output/part-00000 | sort -t$'\t' -k2 -nr | head -20
+```
 
 The command utilizes the following syntax:
 - sort : sorts the lines of text (in our case, the result of the frequency)
