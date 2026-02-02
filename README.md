@@ -65,9 +65,11 @@ $5,000\t0.00
 ## HDFS Paths Used
 The hdfs paths used in the pipeline are as follows:
 
+```bash
 Purpose	| HDFS Path
 Input folder | /user/<your-username>/lab2/input/
 Output folder | /user/<your-username>/lab2/frequency_output/
+```
 
 ## Sort by Frequency
 We can, in fact, sort the results of the word frequency pipeline just by running the following command.
